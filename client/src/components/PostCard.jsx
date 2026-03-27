@@ -30,11 +30,11 @@ const PostCard = ({ post }) => {
       {/* PROFILE HEADER */}
       <div className="post-header">
         <img
-          src="https://i.pinimg.com/236x/6d/4a/9f/6d4a9fdca509fde5a5c372fdee072084.jpg"
+          src="https://media.gettyimages.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=gi&k=20&c=LsB3LmCoN69U82LEYU78IC2tNwOMjy7LJlmEj30UOSs="
           alt="profile"
           className="profile-pic"
         />
-        <span className="username">tanzeela</span>
+        <span className="username">Aastha Bhati</span>
       </div>
 
       {/* IMAGE */}

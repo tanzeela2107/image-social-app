@@ -13,6 +13,19 @@ import {
 const router = express.Router();
 
 router.get("/", getPosts);
+
+// ✅ ADD THIS
+router.post("/", async (req, res) => {
+  try {
+    const newPost = await Post.create({
+      image: req.body.image,
+    });
+    res.json(newPost);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 router.put("/:id/like", likePost);
 router.put("/:id/dislike", dislikePost);
 router.put("/:id/share", sharePost);

@@ -7,17 +7,23 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await API.get("/posts");
-      setPosts(res.data);
+      try {
+        const res = await API.get("/posts");
+        setPosts(res.data);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
     };
     fetchPosts();
   }, []);
 
   return (
     <div>
-      {posts.map((post) => (
-        <PostCard key={post._id} post={post} />
-      ))}
+      {posts.length === 0 ? (
+        <h2>No Posts Found ⚠️</h2>
+      ) : (
+        posts.map((post) => <PostCard key={post._id} post={post} />)
+      )}
     </div>
   );
 };
